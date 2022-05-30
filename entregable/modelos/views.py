@@ -6,10 +6,6 @@ from modelos.models import Familiares
 # Create your views here.
 
 def familiares(request):
-    nuevo_familiar = Familiares.objects.create(
-        name = 'Lucas Rodriguez',
-        dni = 80706050,
-        birth_date = '2000-05-24'
-        )
-    context={'nuevo_familiar':nuevo_familiar}
+    familiares = Familiares.objects.all()
+    context={'familiares':familiares}
     return render(request, 'template.html', context=context)
